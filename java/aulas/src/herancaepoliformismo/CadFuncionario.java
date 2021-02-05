@@ -1,25 +1,51 @@
 package herancaepoliformismo;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Locale;
+import java.util.Scanner;
+
 public class CadFuncionario {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-     
-		Empregados funcionario1= new Empregados ("Juliano", 86745, 12, 23);
-		Terceiro funcionario2= new Terceiro("José", 97455, 16, 25);
-		
-		
-	 System.out.printf("O salário do funcionário %s é de R$%.2f.", funcionario2.getNome(),funcionario2.acrescimo());	
-	 System.out.print("\n ---------------------------------------------------------");
-	 System.out.printf("\nO salário do funcionário %s é de R$%.2f.",funcionario1.getNome(), funcionario1.salario());
-	  System.out.print("\n---------------------------------------------------------");
-	 System.out.printf("\n O funcionário %s com a matrícula %d fez %d horas de trabalho, com a hora valendo %.2f.", funcionario1.getNome(), funcionario1.getMatricula(),funcionario1.getHoras(), funcionario1.getValorHora());
-	 System.out.print("\n---------------------------------------------------------");
-	 System.out.printf("\n O funcionário %s com a matrícula %d fez %d horas de trabalho, com a hora valendo %.2f.", funcionario2.getNome(), funcionario2.getMatricula(), funcionario2.getHoras(), (funcionario2.getValorHora()+(funcionario2.getValorHora())*0.1));
-	
-	 
 	
 	
+	Scanner leia = new Scanner(System.in);
+	double salario = 0.0;
+	List <Empregados> lista = new ArrayList<>();
+	//List é uma collection interface - pode chamar mas não pode instanciar como objeto
+	
+	System.out.print("O colaborador é terceiro? [S/N] ");
+	char opcao = leia.next().toUpperCase().charAt(0);
+	
+	while (opcao != 'S' && opcao != 'N') {
+		System.out.println("O colaborador é terceiro? [S/N] ");
+		opcao = leia.next().toUpperCase().charAt(0);
 	}
-
+	
+	System.out.println("Informe a matricula do colaborador: ");
+	int matricula = leia.nextInt();
+	
+	System.out.println("Informe o nome do colaborador: ");
+	String nome = leia.next();
+	
+	System.out.println("Quantas horas trabalhadas?");
+	int horas = leia.nextInt();
+	
+	System.out.println("Qual valor/hora?");
+	double valorHora = leia.nextDouble();
+	
+	if (opcao == 'S') {
+		System.out.println("Informe o acrescimo: ");
+		double acrescimo = leia.nextDouble();
+		Empregados colaborador = new Terceiro(nome, matricula, horas, valorHora, acrescimo);
+		salario = colaborador.salario();
+	} else if (opcao == 'N') {
+		Empregados colaborador = new Empregados(nome, matricula, horas, valorHora);
+		salario = colaborador.salario();
+	}
+	
+	System.out.printf("O colaborador se chama %s, sua matricula é %d, seu salario total é de R$ %.2f",nome,matricula,salario);
+	
 }
+		
+
+   }
