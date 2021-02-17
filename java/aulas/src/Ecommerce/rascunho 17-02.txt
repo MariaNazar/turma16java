@@ -1,0 +1,43 @@
+Model é a camada que você vai definir os atributos relevantes que você vai trabalhar, como uma "forma".
+reposotory é a camada que faz a comunicação com o DB, com os select, uptade, etc. 
+Controller é o ponto de saida da aplicação, terá comunicação com o front end. e as ações que serão feitas dentro do Backend
+Aplication.properties cria a conexão com o banco de dados na maquina.
+
+Dependencies
+Mysql drive permite trabalhar pelo mysql  (dentro de Spring Initialzr)
+Spring web 
+e boot DevTools
+ Spring data JPA 
+
+UMA MODEL É modelando um DB via Java ( oque tem que ter dentro da tabela pra gerar a entidade) (cria tabelassss)
+
+Getall - busca todas as informacoes do arrayl list 
+GetbyId- mostra os erros de usuario digitar errado 404, 
+GetMapping determina o verbo dentro da requisição 
+
+camelcase pra variavel e pascalcase pra metodos, objetos e classes
+
+optional pode receber nulo.
+
+
+if (user.isPresent()) ---- caso nao exista valor ou digite errado (segurança)
+
+expressão lâmbida___ Ja vimos como If else ou Try catch (versão resumida de um if ou um try, com .map e .orElse. 
+forma de validar com menos palavras 
+build controi um erro, especificação do objeto responseEntipy
+nao tem como rodar o notfound sem o build. 
+
+Spring e um framework (na duvida, tecnologia)
+
+REST- aplicação onde pode trabalahr com protocolo HTTP. 
+quando ela trabalha com todos os verbos de http ela vira RESTFUL 
+
+MVC model, view e controller. repository e uma intermediaria entre model e controller. 
+e a view se conecta com a controller e a controller determina ação pra repository para o DB. 
+
+marvin e gladle vai baixar automaticamente todas as dependencias necessarias dentro da IDE sem que vc precise chamar um por um. 
+
+
+
+
+
